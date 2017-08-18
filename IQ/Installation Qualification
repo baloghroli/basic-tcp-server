@@ -1,0 +1,34 @@
+Installation Qualification
+
+Requirements of running the app:
+
+	-installed Node.js
+	-installed NPM (Node Package Manager) - this is included in the Node.js setup
+	-installed MongoDB
+	-running 'mongod' service
+
+Running the server:
+
+	-extract the rss-test directory to your computer
+	-open the terminal, and cd into the rss-test directory
+	-type 'npm install' or 'npm i' to install the dependencies with the help of npm
+	-after that run 'node server.js'
+	-you should get a 'TCP Server is listening' log in your console
+
+Running the client:
+
+	-open another terminal and cd into the rss-test directory
+	-type 'node client.js'
+	-you should get a 'Connected' log, after that a response from the server: 'Recieved: Connection established'
+	-after that in every 5 seconds a message will sent to the server, and the server saves this message to the database
+
+If you want to end the server and client running, just type Ctrl + C to terminate in both terminal windows.
+
+Database:
+
+	-type the 'mongo' command in tha terminal and the mongo shell becomes available for you
+	-then type the following mongo shell commands:
+		*show dbs - ('tcp-db' database should be available)
+		*use tcp-db
+		*show collections - ('clientreqs' collection should be available)
+		*db.clientreqs.find().pretty() - (you should get the saved data)
